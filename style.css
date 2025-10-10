@@ -129,18 +129,35 @@ body {
     0 0 60px rgba(0, 200, 255, 0.5);
 }
 
-
-.social-media{
+#social-links{
   background-color: #00ffe0;
-  height: 2rem;
-}
+  position: relative;
+  top: 30px;
+  left: 65px;
+  width: 30vh;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+} 
 
-.hero-img .social-media{
+.hero-img #social-links i{
   font-size: 50px;
     margin-top: 40px;
-
+  margin-left: 20px;
+  margin-bottom: 80px;
 }
 
+#social-links a{
+  font-size: 50px;
+  margin-top: 40px;
+  margin-left: 16px;
+  color: #16213e;
+}
+#social-links a:hover{
+  font-size: 80px;
+  color: #f1f1f1;
+} 
 section {
   padding: 4rem 10%;
 }
