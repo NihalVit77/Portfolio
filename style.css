@@ -58,39 +58,46 @@ body {
   line-height: 40px;
 }
 
+/* ===== HERO SECTION ===== */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5% 10%;
   background: linear-gradient(135deg, #1a1a2e, #16213e);
+  flex-wrap: wrap;
 }
 
-.hero-text{
+/* Hero Text */
+.hero-text {
+  flex: 1;
   margin: 50px;
+  min-width: 300px;
 }
 
 .hero-text h1 {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
-  line-height: 110px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: blink 0.8s step-end infinite;
+  line-height: 1.2;
 }
 
-
 .hero-text h1 span {
-  font-size: 8.5rem;
+  font-size: 6rem;
   font-family: "Bebas Neue", sans-serif;
   color: #00ffe0;
 }
 
+.hero-text h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
 .hero-text p {
-  margin: 1rem 0 1rem 0;
-  margin-bottom: 50px;
-  font-size: 20px;
+  margin: 1.5rem 0 2rem 0;
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.5;
 }
 
 .hero-text .btn {
@@ -102,6 +109,7 @@ body {
   font-weight: bold;
   margin-right: 12px;
   transition: 0.3s;
+  display: inline-block;
 }
 
 .hero-text .btn:hover {
@@ -109,58 +117,183 @@ body {
   color: #000;
 }
 
+/* Hero Image */
+.hero-img {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .hero-img img {
   width: 25vw;
   height: 25vw;
   border-radius: 50%;
   border: 3px solid #00ffe0;
-  box-shadow: 
-    0 0 10px rgba(0, 200, 255, 0.7),
-    0 0 20px rgba(0, 200, 255, 0.5),
-    0 0 40px rgba(0, 200, 255, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.hero-img img {
-   box-shadow: 
+  box-shadow:
     0 0 15px rgba(0, 200, 255, 0.9),
     0 0 30px rgba(0, 200, 255, 0.7),
     0 0 60px rgba(0, 200, 255, 0.5);
+  transition: 0.3s ease;
+  object-fit: cover;
 }
 
-#social-links{
-  background-color: #00ffe0;
+/* Social Links */
+#social-links {
   position: relative;
   top: 30px;
-  left: 65px;
-  width: 30vh;
-  height: 10vh;
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 25px;
   border-radius: 100px;
-} 
-
-.hero-img #social-links i{
-  font-size: 50px;
-    margin-top: 40px;
-  margin-left: 20px;
-  margin-bottom: 80px;
+  padding: 0.4rem 2rem;
 }
 
-#social-links a{
-  font-size: 50px;
-  margin-top: 40px;
-  margin-left: 16px;
+#Instagram{
+   background-color: #00ffe0;
+   padding: 0.5rem 1rem;
+   border-radius: 100px;
+   color: #16213e;
+
+}
+
+#linkedin{
+   background-color: #00ffe0;
+   padding: 0.5rem 1rem;
+   border-radius: 100px;
+      color: #16213e;
+
+}
+
+#social-links a {
+  font-size: 2rem;
   color: #16213e;
+  transition: 0.3s;
 }
-#social-links a:hover{
-  font-size: 80px;
+
+#social-links a:hover {
+  transform: scale(1.3);
   color: #f1f1f1;
-} 
+}
+
+/* General section spacing */
 section {
   padding: 4rem 10%;
 }
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 8% 5%;
+  }
+
+  .hero-text {
+    margin: 30px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text h1 span {
+    font-size: 5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-img img {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  #social-links {
+    top: 20px;
+    width: auto;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 10% 5%;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin: 20px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-text h1 span {
+    font-size: 4rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-text .btn {
+    padding: 0.6rem 1.2rem;
+    margin: 6px;
+  }
+
+  .hero-img img {
+    width: 55vw;
+    height: 55vw;
+  }
+
+  #social-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    top: 15px;
+    padding: 0.5rem 0.8rem;
+  }
+
+  #social-links a {
+    font-size: 1.8rem;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h1 span {
+    font-size: 3rem;
+  }
+
+  .hero-img img {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  #social-links {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0.4rem 0.6rem;
+  }
+
+  #social-links a {
+    font-size: 1.5rem;
+  }
+}
+
 
 h2 {
   text-align: center;
